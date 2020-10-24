@@ -26,5 +26,22 @@ ALTER TABLE `cosmoeletro`.`produtos`
 ADD COLUMN `imagem` VARCHAR(260) NULL AFTER `preçofinal`,
 ADD UNIQUE INDEX `imagem_UNIQUE` (`imagem` ASC);
 
+CREATE TABLE `cosmoeletro`.`pedidos` (
+  `idpedidos` INT NOT NULL AUTO_INCREMENT,
+  `nome_cliente` VARCHAR(45) NOT NULL,
+  `endereço` VARCHAR(45) NOT NULL,
+  `telefone` INT NOT NULL,
+  `pedido_produto` VARCHAR(45) NOT NULL,
+  `valoruni` DECIMAL(8,2) NOT NULL,
+  `valor_total` DECIMAL(8,2) NOT NULL,
+  `quantidade` INT NOT NULL,
+  PRIMARY KEY (`idpedidos`))
+COMMENT = 'Descrição dos clientes e dos pedidos.';
+
+INSERT INTO `cosmoeletro`.`pedidos` (`nome_cliente`, `endereço`, `telefone`, `pedido_produto`, `valoruni`, `valor_total`, `quantidade`) VALUES ('José da Silva', 'Avenida Interlagos n° 90', '911111111', 'Refrigerador Consul. Cor:Branco', '1500.00', '1300.00', '1');
+INSERT INTO `cosmoeletro`.`pedidos` (`nome_cliente`, `endereço`, `telefone`, `pedido_produto`, `valoruni`, `valor_total`, `quantidade`) VALUES ('Maria do Carmo', 'Rua São Francisco n°200', '988888888', 'Smart TV 55 polegadas', '1000.00', '950.00', '1');
+
+
+
 
 
